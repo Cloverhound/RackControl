@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lab.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @lab.description %>
+</p>
+
+<h1>IOS Devices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Device</th>
+      <th>Config Name</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @device_labs.each do |device_lab| %>
+      <tr>
+        <td><%= Device.find(device_lab.device_id).name %></td>
+        <td><%= device_lab.config_name %></td>
+        <td><%= link_to 'Restore', '/' %></td>
+        <td><%= link_to 'Show', device_lab %></td>
+        <td><%= link_to 'Edit', edit_device_lab_path(device_lab) %></td>
+        <td><%= link_to 'Destroy', device_lab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Vmware Device Labs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vmware device</th>
+      <th>Snapshot name</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vmware_device_labs.each do |vmware_device_lab| %>
+      <tr>
+        <td><%= VmwareDevice.find(vmware_device_lab.vmware_device_id).vm_name %></td>
+        <td><%= vmware_device_lab.snapshot_name %></td>
+        <td><%= link_to 'Restore', '/' %></td>
+        <td><%= link_to 'Show', vmware_device_lab %></td>
+        <td><%= link_to 'Edit', edit_vmware_device_lab_path(vmware_device_lab) %></td>
+        <td><%= link_to 'Destroy', vmware_device_lab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Add VMware Device', new_vmware_device_lab_path(:lab_id => @lab.id, :lab_rack_id => params[:lab_rack_id]) %> |
+<%= link_to 'Add IOS Device', new_device_lab_path(:lab_id => @lab.id, :lab_rack_id => params[:lab_rack_id]) %> |
+<%= link_to 'Edit', edit_lab_rack_lab_path(:id => @lab.id) %> |
+<%= link_to 'Back', lab_rack_labs_path %>

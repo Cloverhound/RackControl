@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @lab_rack.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @lab_rack.description %>
+</p>
+
+<%= link_to 'Configure VMWare Devices', lab_rack_vmware_devices_path(params[:id]) %><br/>
+<%= link_to 'Configure IOS Devices', lab_rack_devices_path(params[:id]) %><br/>
+<%= link_to 'Configure Labs', lab_rack_labs_path(params[:id]) %>
+<br/>
+<%= link_to 'Edit', edit_lab_rack_path(@lab_rack) %> |
+<%= link_to 'Back', lab_racks_path %>

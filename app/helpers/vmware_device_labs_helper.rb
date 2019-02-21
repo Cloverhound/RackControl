@@ -1,0 +1,2 @@
+module VmwareDeviceLabsHelper
+end

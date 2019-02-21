@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vm_name: MyString
+  datacenter_name: MyString
+  vsphere_host: MyString
+  username: MyString
+  password: MyString
+  description: MyString
+
+two:
+  vm_name: MyString
+  datacenter_name: MyString
+  vsphere_host: MyString
+  username: MyString
+  password: MyString
+  description: MyString

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Devices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ip address</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Enable password</th>
+      <th>Transport type</th>
+      <th>Device type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @devices.each do |device| %>
+      <tr>
+        <td><%= device.name %></td>
+        <td><%= device.ip_address %></td>
+        <td><%= device.username %></td>
+        <td><%= device.password %></td>
+        <td><%= device.enable_password %></td>
+        <td><%= device.transport_type %></td>
+        <td><%= device.device_type_id %></td>
+        <td><%= link_to 'Configure', lab_rack_device_path(:id => device.id) %></td>
+        <td><%= link_to 'Edit', edit_lab_rack_device_path(:id => device.id) %></td>
+        <td><%= link_to 'Destroy', lab_rack_device_path(:id => device.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Device', new_lab_rack_device_path %><br/>
+<%= link_to 'Back to Lab Rack', lab_racks_path %>

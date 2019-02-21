@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vmware device:</strong>
+  <%= @vmware_device_lab.vmware_device_id %>
+</p>
+
+<p>
+  <strong>Lab:</strong>
+  <%= @vmware_device_lab.lab_id %>
+</p>
+
+<p>
+  <strong>Snapshot name:</strong>
+  <%= @vmware_device_lab.snapshot_name %>
+</p>
+
+<%= link_to 'Edit', edit_vmware_device_lab_path(@vmware_device_lab) %> |
+<%= link_to 'Back', vmware_device_labs_path %>

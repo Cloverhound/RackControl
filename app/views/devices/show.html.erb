@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @device.name %>
+</p>
+
+<p>
+  <strong>Ip address:</strong>
+  <%= @device.ip_address %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @device.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @device.password %>
+</p>
+
+<p>
+  <strong>Enable password:</strong>
+  <%= @device.enable_password %>
+</p>
+
+<p>
+  <strong>Transport type:</strong>
+  <%= @device.transport_type %>
+</p>
+
+<p>
+  <strong>Device type:</strong>
+  <%= @device.device_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_lab_rack_device_path(:id => @device.id) %> |
+<%= link_to 'Back', lab_rack_devices_path %>

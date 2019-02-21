@@ -1,0 +1,29 @@
+<%= form_with(model: vmware_device_lab, local: true) do |form| %>
+  <% if vmware_device_lab.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vmware_device_lab.errors.count, "error") %> prohibited this vmware_device_lab from being saved:</h2>
+
+      <ul>
+      <% vmware_device_lab.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= collection_select(:vmware_device_lab, :vmware_device_id, VmwareDevice.all, :id, :vm_name, prompt: true) %>
+
+  <div class="field">
+    <%= form.label :snapshot_name %>
+    <%= form.text_field :snapshot_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  <div class="field" style="visibility:hidden">
+    <%= form.label :lab_id %>
+    <%= form.text_field :lab_id, value: params[:lab_id] %>
+  </div>
+<% end %>

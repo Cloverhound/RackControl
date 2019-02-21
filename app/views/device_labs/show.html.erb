@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @device_lab.device_id %>
+</p>
+
+<p>
+  <strong>Lab:</strong>
+  <%= @device_lab.lab_id %>
+</p>
+
+<p>
+  <strong>Config:</strong>
+  <%= @device_lab.config_id %>
+</p>
+
+<%= link_to 'Edit', edit_device_lab_path(@device_lab) %> |
+<%= link_to 'Back', device_labs_path %>

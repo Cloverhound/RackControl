@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vmware Devices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vm name</th>
+      <th>Datacenter name</th>
+      <th>Vsphere host</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vmware_devices.each do |vmware_device| %>
+      <tr>
+        <td><%= vmware_device.vm_name %></td>
+        <td><%= vmware_device.datacenter_name %></td>
+        <td><%= vmware_device.vsphere_host %></td>
+        <td><%= vmware_device.username %></td>
+        <td><%= vmware_device.password %></td>
+        <td><%= vmware_device.description %></td>
+        <td><%= link_to 'Show', lab_rack_vmware_device_path(:id => vmware_device.id) %></td>
+        <td><%= link_to 'Edit', edit_lab_rack_vmware_device_path(:id => vmware_device.id) %></td>
+        <td><%= link_to 'Destroy', lab_rack_vmware_device_path(:id => vmware_device.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vmware Device', new_lab_rack_vmware_device_path %><br/>
+<%= link_to 'Back to Lab Rack', lab_racks_path %>

@@ -1,0 +1,2 @@
+module DeviceLabsHelper
+end

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  ip_address: MyString
+  username: MyString
+  password: MyString
+  enable_password: MyString
+  transport_type: MyString
+  device_type_id: 1
+
+two:
+  name: MyString
+  ip_address: MyString
+  username: MyString
+  password: MyString
+  enable_password: MyString
+  transport_type: MyString
+  device_type_id: 1

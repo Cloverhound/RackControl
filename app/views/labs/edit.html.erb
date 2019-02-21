@@ -1,0 +1,6 @@
+<h1>Editing Lab</h1>
+
+<%= render 'form_update', lab: @lab %>
+
+<%= link_to 'Show', lab_rack_lab_path(:id => @lab.id) %> |
+<%= link_to 'Back', lab_rack_labs_path %>

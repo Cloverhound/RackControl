@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  device_id: 
+  lab_id: 
+  config_id: 
+
+two:
+  device_id: 
+  lab_id: 
+  config_id: 

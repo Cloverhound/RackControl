@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Device Labs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Device</th>
+      <th>Lab</th>
+      <th>Config Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @device_labs.each do |device_lab| %>
+      <tr>
+        <td><%= device_lab.device_id %></td>
+        <td><%= device_lab.lab_id %></td>
+        <td><%= device_lab.config_id %></td>
+        <td><%= link_to 'Show', device_lab %></td>
+        <td><%= link_to 'Edit', edit_device_lab_path(device_lab) %></td>
+        <td><%= link_to 'Destroy', device_lab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Device Lab', new_device_lab_path %>

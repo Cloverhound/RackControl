@@ -1,0 +1,29 @@
+<%= form_with(model: device_lab, local: true) do |form| %>
+  <% if device_lab.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(device_lab.errors.count, "error") %> prohibited this device_lab from being saved:</h2>
+
+      <ul>
+      <% device_lab.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= collection_select(:device_lab, :device_id, Device.all, :id, :name, prompt: true) %>
+
+  <div class="field">
+    <%= form.label :config_name %>
+    <%= form.text_field :config_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  <div class="field" style="visibility:hidden">
+    <%= form.label :lab_id %>
+    <%= form.text_field :lab_id, value: params[:lab_id] %>
+  </div>
+
+<% end %>
