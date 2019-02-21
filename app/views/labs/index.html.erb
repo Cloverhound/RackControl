@@ -17,7 +17,7 @@
         <td><%= lab.name %></td>
         <td><%= lab.description %></td>
         <td><%= link_to 'Restore', "/" %></td>
-        <td><%= link_to 'Show', lab_rack_lab_path(:id => lab.id) %></td>
+        <td><%= link_to 'Configure / View', lab_rack_lab_path(:id => lab.id) %></td>
         <td><%= link_to 'Edit', edit_lab_rack_lab_path(:id => lab.id) %></td>
         <td><%= link_to 'Destroy', lab_rack_lab_path(:id => lab.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
