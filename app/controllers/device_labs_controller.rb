@@ -10,6 +10,13 @@ class DeviceLabsController < ApplicationController
   # GET /device_labs/1
   # GET /device_labs/1.json
   def show
+
+  end
+
+  def restore
+    @device_lab = DeviceLab.find(params[:device_lab_id])
+    res = Cisco.revert(Device.find(@device_lab.device_id),@device_lab.config_name)
+    redirect_to lab_rack_lab_path(:lab_rack_id => Lab.find(@device_lab.lab_id).lab_rack_id,:id => @device_lab.lab_id), notice: res
   end
 
   # GET /device_labs/new

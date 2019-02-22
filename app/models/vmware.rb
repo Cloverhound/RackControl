@@ -67,6 +67,11 @@ class Vmware < ApplicationRecord
          filter.DestroyPropertyFilter
          @result = task.info.state
          raise(task.info.error) if task.info.state == 'error'
+         if task.info.state == 'error'
+           return device.vm_name + ' error: ' + task.info.error
+         else
+          return device.vm_name + ' restoring'
+       end
 
        end
 end

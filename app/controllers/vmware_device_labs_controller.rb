@@ -21,6 +21,12 @@ class VmwareDeviceLabsController < ApplicationController
   def edit
   end
 
+  def restore
+    @vmware_device_lab = VmwareDeviceLab.find(params[:vmware_device_lab_id])
+    res = Vmware.revert(VmwareDevice.find(@vmware_device_lab.vmware_device_id),@vmware_device_lab.snapshot_name)
+    redirect_to lab_rack_lab_path(:lab_rack_id => Lab.find(@vmware_device_lab.lab_id).lab_rack_id,:id => @vmware_device_lab.lab_id), notice: res
+  end
+
   # POST /vmware_device_labs
   # POST /vmware_device_labs.json
   def create

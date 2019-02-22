@@ -26,7 +26,7 @@
       <tr>
         <td><%= Device.find(device_lab.device_id).name %></td>
         <td><%= device_lab.config_name %></td>
-        <td><%= link_to 'Restore', '/' %></td>
+        <td><%= link_to 'Restore', device_lab_restore_path(device_lab) %></td>
         <td><%= link_to 'Show', device_lab %></td>
         <td><%= link_to 'Edit', edit_device_lab_path(device_lab) %></td>
         <td><%= link_to 'Destroy', device_lab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -53,7 +53,7 @@
       <tr>
         <td><%= VmwareDevice.find(vmware_device_lab.vmware_device_id).vm_name %></td>
         <td><%= vmware_device_lab.snapshot_name %></td>
-        <td><%= link_to 'Restore', '/' %></td>
+        <td><%= link_to 'Restore', vmware_device_lab_restore_path(vmware_device_lab) %></td>
         <td><%= link_to 'Show', vmware_device_lab %></td>
         <td><%= link_to 'Edit', edit_vmware_device_lab_path(vmware_device_lab) %></td>
         <td><%= link_to 'Destroy', vmware_device_lab, method: :delete, data: { confirm: 'Are you sure?' } %></td>

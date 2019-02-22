@@ -21,6 +21,8 @@ class VmwareDevicesController < ApplicationController
   def edit
   end
 
+
+
   # POST /vmware_devices
   # POST /vmware_devices.json
   def create

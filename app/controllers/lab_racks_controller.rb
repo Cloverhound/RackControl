@@ -10,6 +10,7 @@ class LabRacksController < ApplicationController
   # GET /lab_racks/1
   # GET /lab_racks/1.json
   def show
+    @labs = Lab.where(:lab_rack_id => params[:id])
   end
 
   # GET /lab_racks/new

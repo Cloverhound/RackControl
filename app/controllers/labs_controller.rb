@@ -14,6 +14,23 @@ class LabsController < ApplicationController
     @vmware_device_labs = VmwareDeviceLab.where(:lab_id => params[:id])
   end
 
+  def restore
+    @lab = params[:lab_id]
+    @devices = DeviceLab.where(:lab_id => @lab)
+    @vm_devices = VmwareDeviceLab.where(:lab_id => @lab)
+    notice = ""
+    @devices.each do |d|
+      res = Cisco.revert(Device.find(d.device_id),d.config_name)
+      notice += res + ' : '
+    end
+    @vm_devices.each do |vd|
+      res = Vmware.revert(VmwareDevice.find(vd.vmware_device_id),vd.snapshot_name)
+      notice += res + ' : '
+    end
+
+    redirect_to lab_rack_path(:id => Lab.find(@lab).lab_rack_id), notice: notice
+  end
+
   # GET /labs/new
   def new
     @lab = Lab.new
