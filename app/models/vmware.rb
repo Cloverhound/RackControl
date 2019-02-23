@@ -1,16 +1,4 @@
 class Vmware < ApplicationRecord
-  def self.find_snapshot(list, snapshot_name)
-          list.each do |i|
-              if i.name == snapshot_name
-                  return i.snapshot
-              elsif !i.childSnapshotList.empty?
-                  snap = find_snapshot(i.childSnapshotList, snapshot_name)
-                  return snap if snap
-              end
-          end
-
-          nil
-      end
       def self.power_on(device)
 
         vim = RbVmomi::VIM.connect(host: device.vsphere_host, user: device.username, password: device.password, insecure: true)
@@ -74,4 +62,16 @@ class Vmware < ApplicationRecord
        end
 
        end
+       def self.find_snapshot(list, snapshot_name)
+               list.each do |i|
+                   if i.name == snapshot_name
+                       return i.snapshot
+                   elsif !i.childSnapshotList.empty?
+                       snap = find_snapshot(i.childSnapshotList, snapshot_name)
+                       return snap if snap
+                   end
+               end
+
+               nil
+           end
 end
