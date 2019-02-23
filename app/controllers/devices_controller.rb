@@ -28,7 +28,7 @@ class DevicesController < ApplicationController
 
     respond_to do |format|
       if @device.save
-        format.html { redirect_to lab_rack_device_path(:id => @device.id), notice: 'Device was successfully created.' }
+        format.html { redirect_to lab_rack_devices_path(:lab_rack_id => @device.lab_rack_id), notice: 'Device was successfully created.' }
         format.json { render :show, status: :created, location: @device }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DevicesController < ApplicationController
   def update
     respond_to do |format|
       if @device.update(device_params)
-        format.html { redirect_to lab_rack_device_path(:id => @device.id), notice: 'Device was successfully updated.' }
+        format.html { redirect_to lab_rack_devices_path(:lab_rack_id => @device.lab_rack_id), notice: 'Device was successfully updated.' }
         format.json { render :show, status: :ok, location: @device }
       else
         format.html { render :edit }

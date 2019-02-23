@@ -10,7 +10,7 @@
   <%= @lab.description %>
 </p>
 
-<h1>IOS Devices</h1>
+<h1>Cisco IOS Devices</h1>
 
 <table>
   <thead>
@@ -64,6 +64,6 @@
 
 <br>
 <%= link_to 'Add VMware Device', new_vmware_device_lab_path(:lab_id => @lab.id, :lab_rack_id => params[:lab_rack_id]) %> |
-<%= link_to 'Add IOS Device', new_device_lab_path(:lab_id => @lab.id, :lab_rack_id => params[:lab_rack_id]) %> |
+<%= link_to 'Add Cisco IOS Device', new_device_lab_path(:lab_id => @lab.id, :lab_rack_id => params[:lab_rack_id]) %> |
 <%= link_to 'Edit', edit_lab_rack_lab_path(:id => @lab.id) %> |
 <%= link_to 'Back', lab_rack_labs_path %>

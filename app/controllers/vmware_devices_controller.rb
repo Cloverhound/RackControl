@@ -30,7 +30,7 @@ class VmwareDevicesController < ApplicationController
 
     respond_to do |format|
       if @vmware_device.save
-        format.html { redirect_to lab_rack_vmware_device_path(:id => @vmware_device.id), notice: 'Vmware device was successfully created.' }
+        format.html { redirect_to lab_rack_vmware_devices_path(:lab_rack_id => @vmware_device.lab_rack_id), notice: 'Vmware device was successfully created.' }
         format.json { render :show, status: :created, location: @vmware_device }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class VmwareDevicesController < ApplicationController
   def update
     respond_to do |format|
       if @vmware_device.update(vmware_device_params)
-        format.html { redirect_to lab_rack_vmware_device_path(:id => @vmware_device.id), notice: 'Vmware device was successfully updated.' }
+        format.html { redirect_to lab_rack_vmware_devices_path(:lab_rack_id => @vmware_device.lab_rack_id), notice: 'Vmware device was successfully updated.' }
         format.json { render :show, status: :ok, location: @vmware_device }
       else
         format.html { render :edit }

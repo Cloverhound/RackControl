@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Devices</h1>
+<h1>Cisco IOS Devices</h1>
 
 <table>
   <thead>
@@ -32,5 +32,5 @@
 
 <br>
 
-<%= link_to 'New Device', new_lab_rack_device_path %><br/>
-<%= link_to 'Back to Lab Rack', lab_racks_path %>
+<%= link_to 'New Cisco IOS Device', new_lab_rack_device_path %><br/>
+<%= link_to 'Back to Lab Rack', lab_rack_path(:id => params[:lab_rack_id]) %>
